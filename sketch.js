@@ -1,7 +1,26 @@
+let misonido;
+
+function preload() {
+  soundFormats('wav', 'mp3', 'ogg');
+  misonido = loadSound('sonido/sonidomoneda');
+}
+
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  let cnv = createCanvas(windowWidth, windowHeight);
+  cnv.mousePressed(presionar);
+}
+
+function presionar() {
+  misonido.play();
+  circle(mouseX, mouseY, 20)
 }
 
 function draw() {
-  circle(mouseX, mouseY, 20);
 }
+
+function mouseDragged() {
+  misonido.play();
+  circle(mouseX, mouseY, 20);
+  
+}
+
